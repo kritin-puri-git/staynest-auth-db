@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: staynest-migrations
+
+  config:
+    import:
+      - optional:file:.env[.properties]
+      - vault://secret/staynest/dev/mysql?prefix=mysql.
+
+  cloud:
+    vault:
+      uri: ${STAYNEST_HASHICORP_VAULT_URI}
+      authentication: ${STAYNEST_HASHICORP_VAULT_AUTHENTICATION}
+      app-role:
+        role-id: ${STAYNEST_HASHICORP_VAULT_ROLE_ID}
+        secret-id: ${STAYNEST_HASHICORP_VAULT_SECRET_ID}
+      kv:
+        enabled: true
+
+  datasource:
+    url: jdbc:mysql://${mysql.staynest-proxysql-host}:${mysql.staynest-proxysql-port}/${mysql.staynest-mysql-db-database}
+    username: ${mysql.staynest-mysql-db-master-username}
+    password: ${mysql.staynest-mysql-db-master-password}
+
+  flyway:
+    locations:
+      - classpath:db/migration/auth
+      - classpath:db/migration/profile
+
+
+
