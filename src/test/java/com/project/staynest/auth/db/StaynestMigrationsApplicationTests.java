@@ -1,4 +1,4 @@
-package com.project.staynest.migrations;
+package com.project.staynest.auth.db;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

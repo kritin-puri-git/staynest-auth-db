@@ -7,6 +7,13 @@ spring:
       - optional:file:.env[.properties]
       - vault://secret/staynest/dev/mysql?prefix=mysql.
 
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    consumer:
+      group-id: staynest-auth-dbc
+      auto-offset-reset: earliest
+
   cloud:
     vault:
       uri: ${STAYNEST_HASHICORP_VAULT_URI}

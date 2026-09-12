@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.project.staynest</groupId>
-	<artifactId>staynest-migrations</artifactId>
+	<artifactId>staynest-auth-db</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>
@@ -79,6 +79,21 @@
 		</dependency>
 		<!-- FLYWAY -->
 
+		<!-- KAFKA -->
+
+		<!-- Core Kafka auto-configuration -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-kafka</artifactId>
+		</dependency>
+
+		<!-- Test support (embedded broker, @EmbeddedKafka) -->
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- KAFKA -->
 
 	</dependencies>
 
