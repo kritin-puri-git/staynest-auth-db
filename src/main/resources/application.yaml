@@ -1,6 +1,6 @@
 spring:
   application:
-    name: staynest-migrations
+    name: staynest-auth-db
 
   config:
     import:
@@ -10,9 +10,15 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
 
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
     consumer:
-      group-id: staynest-auth-dbc
+      group-id: staynest-auth-db
       auto-offset-reset: earliest
+      enable-auto-commit: false
+    listener:
+      ack-mode: manual
 
   cloud:
     vault:
@@ -33,6 +39,3 @@ spring:
     locations:
       - classpath:db/migration/auth
       - classpath:db/migration/profile
-
-
-
