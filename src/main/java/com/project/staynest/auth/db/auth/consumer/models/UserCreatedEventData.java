@@ -1,4 +1,4 @@
-package com.project.staynest.auth.db.consumer.models;
+package com.project.staynest.auth.db.auth.consumer.models;
 
 import java.time.Instant;
 

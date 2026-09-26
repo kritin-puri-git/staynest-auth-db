@@ -1,7 +1,7 @@
-package com.project.staynest.auth.db.consumer;
+package com.project.staynest.auth.db.auth.consumer;
 
-import com.project.staynest.auth.db.consumer.enums.EventTypes;
-import com.project.staynest.auth.db.consumer.models.UserCreatedEventData;
+import com.project.staynest.auth.db.auth.consumer.enums.EventTypes;
+import com.project.staynest.auth.db.auth.consumer.models.UserCreatedEventData;
 import com.project.staynest.auth.db.validation.Validation;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.Acknowledgment;
